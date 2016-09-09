@@ -38,16 +38,19 @@ var opts = stdio.getopt({
     template: { key: 't', args: 1 },
     css: { key: 'c', args: 1 },
     csl: { key: 's', args: 1 },
+    git: { key: 'g', args: 1, description: 'default git host' },
     _meta_: { minArgs: 1 }
 })
 
-try {
-    var config = yaml.safeLoad(sh.cat('./pandoc-proj.yml'))
-} catch (e) {
-    die(e)
+var config = yaml.safeLoad(sh.cat('./pandoc-proj.yml'))
+if (!config) {
+    if (opts.args[0] == 'init') config = {}
+    else die('run ppm.js init first')
 }
 
-if (!actions[opts.args[0]]) usage()
-actions[opts.args[0]](opts, config, (err) => {
-    if (err) die(err)
+actions[opts.args[0]](opts, config, (err, code, change) => {
+    if (code > 0 || err) die(err)
+    if (change)
+        sh.ShellString(yaml.safeDump(change))
+          .to('pandoc-proj.yml')
 })
