@@ -1,6 +1,6 @@
 {
-  "name": "ppm",
-  "version": "1.0.0",
+  "name": "pandoc-ppm",
+  "version": "1.0.1",
   "description": "pandoc package manager",
   "main": "index.js",
   "bin": "bin/ppm",
