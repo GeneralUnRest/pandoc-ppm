@@ -35,10 +35,8 @@ var actions = {
 }
 
 var opts = stdio.getopt({
-    template: { key: 't', args: 1 },
-    css: { key: 'c', args: 1 },
-    csl: { key: 's', args: 1 },
     git: { key: 'g', args: 1, description: 'default git host' },
+    silent: { key: 's', args: 0, description: 'do not prompt' },
     _meta_: { minArgs: 1 }
 })
 
