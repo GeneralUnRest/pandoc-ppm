@@ -1,7 +1,0 @@
-name: generic
-type: html
-source_files:
-  - '*.md'
-depends: []
-buildOpts:
-  - '--self-contained'
