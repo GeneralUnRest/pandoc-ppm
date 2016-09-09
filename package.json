@@ -1,0 +1,24 @@
+{
+  "name": "pandoc-pm",
+  "version": "1.0.0",
+  "description": "pandoc package manager",
+  "main": "ppm.js",
+  "bin": "ppm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pandoc",
+    "package",
+    "manager"
+  ],
+  "author": "prussian <genunrest@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "async": "^2.0.1",
+    "glob": "^7.0.6",
+    "js-yaml": "^3.6.1",
+    "shelljs": "^0.7.4",
+    "stdio": "^0.2.7"
+  }
+}
